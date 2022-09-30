@@ -134,6 +134,14 @@ export function bindThemeButtons() {
             "color-text-acc": "#AA9A73",
           });
           return;
+
+        case "initial":
+          setTheme({
+            "color-background": "initial",
+            "color-text-pri": "initial",
+            "color-text-acc": "initial",
+          });
+          return;
       }
     });
   }

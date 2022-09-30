@@ -68,37 +68,13 @@ a{
 
 a:hover{
 	text-decoration: underline;
-	webkit-text-decoration-color: var(--color-text-acc);
-	webkit-text-decoration-skip: true;
+	text-decoration-color: var(--color-text-acc);
+	text-decoration-skip: true;
 }
 
 .icon{
 	font-size: 2.5em;
 }
-
-
-/* FORMS */
-
-input{
-	background-color: transparent;
-	border: 0;
-	border-bottom: thin solid var(--color-text-acc);
-	color: var(--color-text-pri);
-	font-size: 0.8em;
-	height: 3.5em;
-	transition: all 0.4s ease;
-	width: 100%;
-}
-
-input:focus{
-	border-color: var(--color-text-pri);
-	outline: none;
-}
-
-input:focus{
-	opacity: 1;
-}
-
 
 /* TABLES */
 
@@ -109,55 +85,30 @@ table{
 	font-size: 1em;
 	text-align: left;
 	width: 100%;
-}
 
-table td:nth-of-type(2){
-	padding-right: 5em;
-}
-
-table td{
-	border: thin solid #e4e4e4;
-	color: #333333;
-	font-size: 1em;
-	overflow: hidden;
-	padding: 10px 5px;
-	word-break: normal;
-}
-
-table th{
-	border: thin solid #e4e4e4;
-	color: #333333;
-	font-weight: bold;
-	padding: 10px 5px;
-}
-
-table a{
-	color: #333333;
-}
-
-
-/* ANIMATION */
-
-.fade{
-	opacity: 0;
-}
-
-@keyframes fadeseq{
-	100%	{
-		opacity: 1;
+	td:nth-of-type(2){
+		padding-right: 5em;
 	}
-}
 
-.fade{
-	opacity: 0;
-}
+	td{
+		border: thin solid #e4e4e4;
+		color: #333333;
+		font-size: 1em;
+		overflow: hidden;
+		padding: 10px 5px;
+		word-break: normal;
+	}
 
-.fade{
-	animation: fadeseq .3s forwards;
-}
+	th{
+		border: thin solid #e4e4e4;
+		color: #333333;
+		font-weight: bold;
+		padding: 10px 5px;
+	}
 
-.fade:nth-child(2){
-	animation-delay: .4s;
+	a{
+		color: #333333;
+	}
 }
 
 
@@ -176,7 +127,6 @@ table a{
 	margin-top: 5vh;
 	width: 60%;
 }
-
 
 
 /* SECTIONS */
@@ -353,80 +303,7 @@ table a{
 
 /* THEMING */
 
-.theme-button{
-	font-size: 0.8em;
-	margin: 2px;
-    width:128px;
-	line-height: 3em;
-	text-align: center;
-	text-transform: uppercase;
-}
-
-.theme-blackboard{
-	background-color: #000000;
-	border: 4px solid #5c5c5c;
-    color: #FFFDEA;
-}
-
-.theme-gazette{
-	background-color: #F2F7FF;
-	border: 4px solid #5c5c5c;
-    color: #000000;
-}
-
-.theme-espresso{
-	background-color: #21211F;
-	border: 4px solid #4E4E4E;
-    color: #D1B59A;
-}
-
-.theme-cab{
-	background-color: #FEED01;
-	border: 4px solid #424242;
-    color: #1F1F1F;
-}
-
-.theme-cloud{
-	background-color: #f1f2f0;
-	border: 4px solid #35342f;
-    color: #37bbe4;
-}
-
-.theme-lime{
-	background-color: #263238;
-	border: 4px solid #AABBC3;
-    color: #aeea00;
-}
-
-.theme-passion{
-	background-color: #f5f5f5;
-	border: 4px solid #8e24aa;
-    color: #12005e;
-}
-
-.theme-blues{
-	background-color: #2B2C56;
-	border: 4px solid #6677EB;
-    color: #EFF1FC;
-}
-
-.theme-chalk{
-	background-color: #263238;
-	border: 4px solid #FF869A;
-    color: #AABBC3;
-}
-
-.theme-tron{
-	background-color: #242B33;
-	border: 4px solid #6EE2FF;
-    color: #EFFBFF;
-}
-
-.theme-paper{
-	background-color: #F8F6F1;
-	border: 4px solid #F5E1A4;
-    color: #4C432E;
-}
+@import 'theme';
 
 
 /* MEDIA QUERIES */

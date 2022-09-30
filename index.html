@@ -6,10 +6,7 @@
   <meta charset="utf-8">
   <meta name="description" content="a startpage for your server and / or new tab page">
   <meta http-equiv="Default-Style" content="">
-  <meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"
-    name="viewport" />
-  <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700,900" rel="stylesheet">
-  <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
+  <meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
   <link rel="stylesheet" href="/scss/styles.scss" />
 </head>
 
@@ -77,7 +74,7 @@
         {{#apps}}
         <div class="apps_item">
           <div class="apps_icon">
-            <span class="iconify icon" data-icon="mdi-{{icon}}"></span>
+          {{{iconify icon}}}
           </div>
           <div class="apps_text">
             <a href="http://{{url}}" {{#if target}}target="{{target}}" {{/if}}>{{name}}</a>

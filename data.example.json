@@ -3,31 +3,31 @@
     {
       "name": "Cloud",
       "items": [
-        {"name":"CloudCMD","url":"files.example.com","icon":"folder-multiple-outline"},
-        {"name":"Cockpit","url":"cp.example.com","icon":"airplane"},
-        {"name":"Feedbin","url":"rss.example.com","icon":"rss"},
-        {"name":"Filestash","url":"cloud.example.com","icon":"package"},
-        {"name":"Minio","url":"minio.example.com","icon":"server"},
-        {"name":"Mylar","url":"comics.example.com","icon":"book-open-variant"},
-        {"name":"Nextcloud","url":"cloud.example.com","icon":"weather-cloudy"},
-        {"name":"Ombi","url":"request.example.com","icon":"file-find-outline"},
-        {"name":"Pi-hole","url":"pihole.example.com","icon":"do-not-disturb"},
-        {"name":"Portainer","url":"port1.example.com","icon":"docker"},
-        {"name":"Stackedit","url":"md.example.com","icon":"markdown"},
-        {"name":"Ubooquity","url":"opds.example.com","icon":"library-shelves"}
+        {"name":"CloudCMD","url":"http://files.example.com","icon":"folder-multiple-outline"},
+        {"name":"Cockpit","url":"http://cp.example.com","icon":"airplane"},
+        {"name":"Feedbin","url":"http://rss.example.com","icon":"rss"},
+        {"name":"Filestash","url":"http://cloud.example.com","icon":"package"},
+        {"name":"Minio","url":"http://minio.example.com","icon":"server"},
+        {"name":"Mylar","url":"http://comics.example.com","icon":"book-open-variant"},
+        {"name":"Nextcloud","url":"http://cloud.example.com","icon":"weather-cloudy"},
+        {"name":"Ombi","url":"http://request.example.com","icon":"file-find-outline"},
+        {"name":"Pi-hole","url":"http://pihole.example.com","icon":"do-not-disturb"},
+        {"name":"Portainer","url":"http://port1.example.com","icon":"docker"},
+        {"name":"Stackedit","url":"http://md.example.com","icon":"markdown"},
+        {"name":"Ubooquity","url":"http://opds.example.com","icon":"library-shelves"}
       ]
     },
     {
       "name": "TV",
       "items": [
-        {"name":"Plex","url":"play.example.com","icon":"plex"},
-        {"name":"Radarr","url":"movies.example.com","icon":"filmstrip"},
-        {"name":"Sonarr","url":"tv.example.com","icon":"television-box"},
-        {"name":"Bazarr","url":"subs.example.com","icon":"message-video"},
-        {"name":"Jackett","url":"jackett.example.com","icon":"tshirt-crew-outline"},
-        {"name":"Lidarr","url":"music.example.com","icon":"music"},
-        {"name":"Transmission","url":"dl.example.com","icon":"progress-download"},
-        {"name":"Youtube-DL","url":"yt.example.com","icon":"youtube"}
+        {"name":"Plex","url":"http://play.example.com","icon":"plex"},
+        {"name":"Radarr","url":"http://movies.example.com","icon":"filmstrip"},
+        {"name":"Sonarr","url":"http://tv.example.com","icon":"television-box"},
+        {"name":"Bazarr","url":"http://subs.example.com","icon":"message-video"},
+        {"name":"Jackett","url":"http://jackett.example.com","icon":"tshirt-crew-outline"},
+        {"name":"Lidarr","url":"http://music.example.com","icon":"music"},
+        {"name":"Transmission","url":"http://dl.example.com","icon":"progress-download"},
+        {"name":"Youtube-DL","url":"http://yt.example.com","icon":"youtube"}
       ]
     }
   ],

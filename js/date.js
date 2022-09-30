@@ -1,16 +1,16 @@
-function date() {
+export function date() {
   let currentDate = new Date();
   let dateOptions = {
     weekday: "long",
     year: "numeric",
     month: "long",
-    day: "numeric"
+    day: "numeric",
   };
   let date = currentDate.toLocaleDateString("en-GB", dateOptions);
   document.getElementById("header_date").innerHTML = date;
 }
 
-function greet() {
+export function greet() {
   let currentTime = new Date();
   let greet = Math.floor(currentTime.getHours() / 6);
   switch (greet) {
@@ -28,10 +28,3 @@ function greet() {
       break;
   }
 }
-
-function loadFunctions() {
-  date();  
-  greet();
-}
-
-

@@ -1,11 +1,7 @@
 import { defineConfig } from 'vite'
 import { resolve } from 'path'
 import handlebars from 'vite-plugin-handlebars'
-import { readFileSync } from 'fs'
-
-const iconsPath = resolve(__dirname, 'node_modules/@iconify-json/mdi/icons.json')
-const iconsData = JSON.parse(readFileSync(iconsPath))
-// console.log(Object.keys(iconsData))
+import { getIconSVG } from './icons'
 
 var data
 try {
@@ -36,10 +32,9 @@ export default defineConfig({
       context: data,
       helpers: {
         iconify: (name) => {
-          const icon = iconsData.icons[name]
-          if (!icon) return `no icon ${name}`
-          return `<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
-          ${icon.body}</svg>`
+          const svg = getIconSVG(name)
+          if (!svg) return `no icon ${name}`
+          return svg
         }
       }
     }),

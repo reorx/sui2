@@ -1,11 +1,17 @@
 import { defineConfig } from 'vite'
 import { resolve } from 'path'
-import * as links from './links.json'
-import * as providers from './providers.json'
-import * as apps from './apps.json'
 import handlebars from 'vite-plugin-handlebars'
 
-console.log('apps', apps)
+var data
+try {
+  data = await import('./data.json')
+} catch (e) {
+  if (e.code !== 'ERR_MODULE_NOT_FOUND') {
+    throw e;
+  }
+  console.log('data.json missing, load data.example.json')
+  data = await import('./data.example.json')
+}
 
 export default defineConfig({
   // use relative path for assets
@@ -21,11 +27,7 @@ export default defineConfig({
   },
   plugins: [
     handlebars({
-      context: {
-        'bookmarks': links.bookmarks,
-        'providers': providers.providers,
-        'apps': apps.apps,
-      }
+      context: data,
     }),
   ],
 })

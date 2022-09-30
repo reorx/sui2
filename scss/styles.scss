@@ -136,7 +136,7 @@ table {
   z-index: 1;
 }
 
-#apps_loop {
+.apps_loop {
   border-bottom: 0px solid var(--color-text-acc);
   display: grid;
   grid-column-gap: 0px;
@@ -319,7 +319,7 @@ table {
     width: 90%;
   }
 
-  #apps_loop {
+  .apps_loop {
     grid-template-columns: 1fr 1fr 1fr;
     width: 100vw;
   }
@@ -369,7 +369,7 @@ table {
     font-size: 1em;
   }
 
-  #apps_loop {
+  .apps_loop {
     grid-column-gap: 0px;
     grid-row-gap: 0px;
     grid-template-columns: 1fr 1fr;

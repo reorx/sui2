@@ -35,6 +35,13 @@ export default defineConfig({
           const svg = getIconSVG(name)
           if (!svg) return `no icon ${name}`
           return svg
+        },
+        domain: (url) => {
+          var o = new URL(url);
+          if (o.port) {
+            return `${o.hostname}:${o.port}`
+          }
+          return o.hostname
         }
       }
     }),

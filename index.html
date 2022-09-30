@@ -52,22 +52,24 @@
       <h1 id="header_greet"></h1>
     </section>
 
-    <section id="apps">
-      <h3>Applications</h3>
-      <div id="apps_loop">
-        {{#apps}}
+    {{#apps}}
+    <section class="apps">
+      <h3>{{name}}</h3>
+      <div class="apps_loop">
+        {{#items}}
         <div class="apps_item">
           <div class="apps_icon">
           {{{iconify icon}}}
           </div>
           <div class="apps_text">
-            <a href="http://{{url}}" {{#if target}}target="{{target}}" {{/if}}>{{name}}</a>
-            <span id="app-address">{{url}}</span>
+            <a href="{{url}}" target="_blank">{{name}}</a>
+            <span id="app-address">{{domain url}}</span>
           </div>
         </div>
-        {{/apps}}
+        {{/items}}
       </div>
     </section>
+    {{/apps}}
 
     <section id="links">
       <h3>Bookmarks</h3>

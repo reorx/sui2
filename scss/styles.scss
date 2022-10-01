@@ -49,7 +49,6 @@ h4 {
 h1 {
   font-size: 4em;
   font-weight: 700;
-  margin-bottom: 0.5em;
 }
 
 h2 {
@@ -60,13 +59,13 @@ h2 {
 h3 {
   font-size: 20px;
   font-weight: 900;
-  height: 10px;
+	margin: .5em 0 1em;
 }
 
 h4 {
   font-size: 1.1em;
-  font-weight: 400;
-  height: 10px;
+  font-weight: 300;
+	margin: .5em 0;
 }
 
 a {
@@ -83,17 +82,18 @@ a:hover {
 /* LAYOUT */
 
 #container {
-  align-items: stretch;
   display: grid;
   grid-column-gap: 20px;
   grid-row-gap: 3vh;
   grid-template-columns: 1fr;
-  grid-template-rows: 8vh auto;
+  grid-template-rows: auto;
+  align-items: stretch;
   justify-items: stretch;
   margin-left: auto;
   margin-right: auto;
   margin-top: 5vh;
   width: 60%;
+	min-width: 800px;
 }
 
 /* SECTIONS */
@@ -149,6 +149,7 @@ a:hover {
 	.apps_item {
 		display: flex;
 		padding: var(--edge-gap);
+		margin-left: calc(0px - var(--edge-gap));
   	height: 55px;
 
 		&:hover, &:active {
@@ -224,19 +225,15 @@ a:hover {
 
 /* MEDIA QUERIES */
 
-@media screen and (max-width: 1260px) {
+@media screen and (max-width: 960px) {
   #container {
-    align-items: stretch;
-    display: grid;
-    grid-column-gap: 10px;
-    grid-row-gap: 0px;
-    grid-template-columns: 1fr;
-    grid-template-rows: 80px auto;
-    justify-items: stretch;
-    margin-bottom: 1vh;
-    margin-left: auto;
-    margin-right: auto;
+    // display: grid;
+    // grid-column-gap: 10px;
+    // grid-row-gap: 0px;
+    // grid-template-columns: 1fr;
+    // grid-template-rows: 80px auto;
     width: 90%;
+		min-width: initial;
   }
 
   .apps_loop {
@@ -261,34 +258,6 @@ a:hover {
     font-size: calc(16px + 6 * ((100vw - 320px) / 680));
   }
 
-  #container {
-    align-items: stretch;
-    display: grid;
-    grid-column-gap: 20px;
-    grid-row-gap: 0px;
-    grid-template-columns: 1fr;
-    grid-template-rows: 80px auto;
-    justify-items: stretch;
-    margin-bottom: 1vh;
-    width: 90%;
-  }
-
-  h1 {
-    font-size: 4em;
-    height: auto;
-    margin-bottom: 0em;
-  }
-
-  h2 {
-    font-size: 1em;
-    height: auto;
-    margin-bottom: 0em;
-  }
-
-  h3 {
-    font-size: 1em;
-  }
-
   .apps_loop {
     grid-column-gap: 0px;
     grid-row-gap: 0px;
@@ -296,30 +265,12 @@ a:hover {
     width: 100vw;
   }
 
-  .apps_icon {
-    height: 64px;
-    margin-right: 0.8em;
-    padding-top: 14px;
-  }
-
-  .apps_icon span {
-    font-size: 2em;
-    line-height: 2.5rem;
-  }
-
   #links_loop {
-    display: grid;
     flex-wrap: nowrap;
+    display: grid;
     grid-column-gap: 20px;
     grid-row-gap: 0px;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: auto;
-  }
-}
-
-/* Small Screens */
-@media only screen and (max-width: 400px) {
-  #app-address {
-    display: none;
   }
 }

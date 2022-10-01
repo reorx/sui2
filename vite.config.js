@@ -1,5 +1,6 @@
 import { defineConfig } from 'vite'
 import { resolve } from 'path'
+import { readFileSync } from 'fs'
 import handlebars from 'vite-plugin-handlebars'
 import { getIconSVG } from './icons'
 
@@ -7,14 +8,13 @@ let dataFilename = process.env.DATA_FILENAME || './data.json'
 
 var data
 try {
-  data = await import(dataFilename)
+  data = JSON.parse(readFileSync(dataFilename))
 } catch (e) {
-  if (e.code !== 'ERR_MODULE_NOT_FOUND') {
-    throw e;
-  }
-  if (!process.env.DATA_FILENAME) {
+  if (e.code === 'ENOENT' && !process.env.DATA_FILENAME) {
     console.log('data.json missing, fall back to data.example.json')
     data = await import('./data.example.json')
+  } else {
+    throw e;
   }
 }
 

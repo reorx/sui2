@@ -16,6 +16,7 @@
     "vite-plugin-handlebars": "^1.6.0"
   },
   "dependencies": {
+    "fuse.js": "^6.6.2",
     "iconify-icon": "^1.0.0"
   }
 }

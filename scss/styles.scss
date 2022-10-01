@@ -97,6 +97,15 @@ a:hover {
 
 /* SECTIONS */
 
+#keyword {
+	position: fixed;
+	width: 100%;
+	top: 0;
+	height: 30px;
+	background-color: #ccc;
+	text-align: center;
+}
+
 #header {
   border-bottom: 0px solid var(--color-text-acc);
   z-index: 1;
@@ -113,14 +122,17 @@ a:hover {
 
 }
 
+.matched {
+	background-color: var(--color-link-hover-bg);
+}
 
-.apps_item {
+.apps_item_wrap {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   margin: 0;
 
-	> a {
+	.apps_item {
 		display: flex;
 		padding: var(--edge-gap);
   	height: 55px;
@@ -173,109 +185,24 @@ a:hover {
   grid-template-rows: auto;
 }
 
-#links_item {
+.links_category {
   line-height: 1.5rem;
   margin-bottom: 2em;
   -webkit-font-smoothing: antialiased;
-}
 
-#links_item h4 {
-  color: var(--color-text-acc);
-}
+	h4 {
+		color: var(--color-text-acc);
+	}
 
-#links_item a {
-  display: block;
-  line-height: 2;
+	a {
+		display: block;
+		line-height: 2;
+	}
 }
 
 /* MODAL */
 
-#modal {
-  overflow-y: auto;
-  bottom: 0;
-  left: 0;
-  opacity: 0;
-  pointer-events: none;
-  position: fixed;
-  right: 0;
-  top: 0;
-  transition: all 0.3s;
-  z-index: 20;
-}
-
-#modal:target {
-  opacity: 1;
-  pointer-events: auto;
-}
-
-#modal > div {
-  background-color: #ffffff;
-  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.25);
-  margin-left: auto;
-  margin-right: auto;
-  padding: 2em;
-  margin-top: 5vh;
-  width: 50%;
-  display: flex;
-  flex-direction: column;
-}
-
-#modal h1 {
-  color: #333333;
-  font-size: 2em;
-}
-
-#modal h2 {
-  margin-top: 1.5em;
-}
-
-#modal-header {
-  display: flex;
-  justify-content: space-between;
-}
-
-#modal-footer {
-  display: flex;
-  font-size: 2em;
-  justify-content: flex-start;
-}
-
-#modal-footer a {
-  margin-right: 0.25em;
-}
-
-.modal-close {
-  color: #000000;
-  font-size: 1.5em;
-  text-align: center;
-  text-decoration: none;
-}
-
-.modal-close:hover {
-  color: #000;
-}
-
-#modal_init a {
-  bottom: 1vh;
-  color: var(--color-text-acc);
-  left: 1vw;
-  position: fixed;
-}
-
-#modal_init a:hover {
-  color: var(--color-text-pri);
-}
-
-#modal-theme {
-  border-bottom: 0px solid var(--color-text-acc);
-  display: flex;
-  flex-wrap: wrap;
-  margin-bottom: 2em;
-}
-
-#providers {
-  margin-bottom: 2em;
-}
+@import "modal";
 
 /* THEMING */
 

@@ -45,6 +45,8 @@
     </div>
   </section>
 
+  <div id="keyword"></div>
+
   <main id="container" class="fade">
 
     <section id="header">
@@ -58,8 +60,8 @@
       <div class="apps_loop">
         {{#items}}
 
-        <div class="apps_item">
-          <a href="{{url}}" target="_blank">
+        <div class="apps_item_wrap">
+          <a href="{{url}}" target="_blank" class="apps_item">
             <div class="apps_icon">
             {{{iconify icon}}}
             </div>
@@ -78,10 +80,10 @@
       <h3>Bookmarks</h3>
       <div id="links_loop">
         {{#bookmarks}}
-        <div id="links_item">
+        <div class="links_category">
           <h4>{{category}}</h4>
           {{#links}}
-          <a href="{{url}}" target="{{target}}" class="theme_color-border theme_text-select">{{name}}</a>
+          <a href="{{url}}" target="{{target}}" class="links_item theme_color-border theme_text-select">{{name}}</a>
           {{/links}}
         </div>
         {{/bookmarks}}

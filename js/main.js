@@ -1,5 +1,6 @@
 import { greet, date } from "./date";
 import { bindThemeButtons, loadTheme } from "./themer";
+import { initKeyboardSearch } from "./search"
 
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -7,4 +8,5 @@ document.addEventListener('DOMContentLoaded', () => {
   date()
   greet()
   bindThemeButtons()
+  initKeyboardSearch()
 })

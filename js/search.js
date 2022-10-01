@@ -64,7 +64,11 @@ function updateKeyword(key) {
       store.keyword = store.keyword + char
     }
   }
-  keywordEl.innerHTML = store.keyword
+  if (store.keyword) {
+    keywordEl.innerHTML = `<span>${store.keyword}</span>`
+  } else {
+    keywordEl.innerHTML = ''
+  }
   return store.keyword
 }
 

@@ -103,8 +103,15 @@ a:hover {
 	width: 100%;
 	top: 0;
 	height: 30px;
-	background-color: #ccc;
 	text-align: center;
+	padding-top: var(--edge-gap);
+
+	span {
+		font-size: 1.5em;
+		background-color: var(--color-link-hover-bg);
+		display: inline-block;
+		padding: 3px 5px;
+	}
 }
 
 #header {

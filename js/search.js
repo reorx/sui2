@@ -37,7 +37,6 @@ function loadSearchItems() {
     includeMatches: true,
     minMatchCharLength: 1,
     threshold: 0.2,
-    distance: 2,
   })
 }
 
@@ -113,14 +112,16 @@ function handleMatchedItems(items) {
     item.el.setAttribute('tabindex', tabindex)
     item.el.classList.add(matchedClass)
 
-    highlightText(item.nameEl, i.matches)
+    // because we only have one key to match when initializing Fuse,
+    // matches will only have 1 item
+    highlightText(item.nameEl, i.matches[0])
   })
 }
 
-function highlightText(el, matches) {
-  console.log('matches', matches, el)
-  // only highlight the first part, because it's easier
-  const match = matches[0]
+function highlightText(el, match) {
+  console.log('match', match, el)
+  // get the longest part
+  match.indices.sort((a, b) => (b[1] - b[0]) - (a[1] - a[0]))
   const pos = match.indices[0]
   const start = pos[0], end = pos[1] + 1
   const text = match.value

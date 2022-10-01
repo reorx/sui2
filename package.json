@@ -11,12 +11,9 @@
   "devDependencies": {
     "@iconify-json/mdi": "^1.1.33",
     "@iconify/utils": "^2.0.0",
+    "fuse.js": "^6.6.2",
     "sass": "^1.54.8",
     "vite": "^3.0.7",
     "vite-plugin-handlebars": "^1.6.0"
-  },
-  "dependencies": {
-    "fuse.js": "^6.6.2",
-    "iconify-icon": "^1.0.0"
   }
 }

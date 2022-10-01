@@ -42,6 +42,7 @@ function loadSearchItems() {
 }
 
 const keywordEl = document.getElementById("keyword")
+const regularCharsRe = /\w/
 
 function updateKeyword(key) {
   // backspace
@@ -54,8 +55,9 @@ function updateKeyword(key) {
   } else {
     // convert key code to string, see https://stackoverflow.com/a/5829387/596206
     let char = String.fromCharCode((96 <= key && key <= 105) ? key-48 : key)
-    // some key returns ' ' but they are not space
-    if (char === ' ' && key != 32) char = ''
+    if (!regularCharsRe.test(char)) {
+      char = ''
+    }
     // console.log('key', key, `|${char}|`)
 
     if (char) {
@@ -94,7 +96,7 @@ function handleMatchedItems(items) {
   const matchedClass = 'matched'
   store.searchItems.forEach(item => {
     item.el.setAttribute('tabindex', 0)
-    item.nameEl.textContent = item.name
+    item.nameEl.innerHTML = item.name
     item.el.classList.remove(matchedClass)
   })
 
@@ -112,6 +114,13 @@ function handleMatchedItems(items) {
 }
 
 function highlightText(el, matches) {
+  console.log('matches', matches, el)
+  // only highlight the first part, because it's easier
+  const match = matches[0]
+  const pos = match.indices[0]
+  const start = pos[0], end = pos[1] + 1
+  const text = match.value
+  el.innerHTML = `${text.slice(0, start)}<em>${text.slice(start, end)}</em>${text.slice(end, text.length)}`
 }
 
 export function initKeyboardSearch() {

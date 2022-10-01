@@ -1,6 +1,7 @@
 :root {
 	--edge-gap: 8px;
 	--color-link-hover-bg: rgba(205, 205, 205, 0.5);
+	--color-text-matched: rgb(188, 29, 29);
 }
 
 html {
@@ -124,6 +125,12 @@ a:hover {
 
 .matched {
 	background-color: var(--color-link-hover-bg);
+
+	em {
+		font-style: normal;
+		font-weight: 700;
+		color: var(--color-text-matched)
+	}
 }
 
 .apps_item_wrap {

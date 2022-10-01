@@ -15,7 +15,6 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, Helvetica Neue, Roboto,
     sans-serif;
   font-size: 14px;
-  font-weight: 400;
   height: auto;
   letter-spacing: -0.012em;
   margin: 0;
@@ -34,13 +33,11 @@ body {
 
 h1,
 h2 {
-  font-weight: 300;
   margin: 0;
   padding: 0;
   text-align: left;
 }
 
-h2,
 h3,
 h4 {
   text-transform: uppercase;
@@ -54,6 +51,7 @@ h1 {
 h2 {
   font-size: 16px;
   height: 30px;
+  font-weight: 400;
 }
 
 h3 {
@@ -114,13 +112,14 @@ a:hover {
 	}
 }
 
-#header {
-  border-bottom: 0px solid var(--color-text-acc);
-  z-index: 1;
+#header_date {
+  .time {
+    margin-inline-start: 3em;
+    float: right;
+  }
 }
 
 .apps_loop {
-  border-bottom: 0px solid var(--color-text-acc);
   display: grid;
   grid-column-gap: 0px;
   grid-row-gap: 0px;

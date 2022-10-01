@@ -7,7 +7,8 @@ export function date() {
     day: "numeric",
   };
   let date = currentDate.toLocaleDateString("en-GB", dateOptions);
-  document.getElementById("header_date").innerHTML = date;
+  const time = currentDate.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit', hour12: false});
+  document.getElementById("header_date").innerHTML = `<span class="date">${date}</span><span class="time">${time}</span>`;
 }
 
 export function greet() {

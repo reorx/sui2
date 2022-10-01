@@ -9,47 +9,48 @@
   top: 0;
   transition: all 0.3s;
   z-index: 20;
-}
 
-#modal:target {
-  display: block;
-  pointer-events: auto;
-}
+  &:target {
+    display: block;
+    pointer-events: auto;
+  }
 
-#modal > div {
-  background-color: #ffffff;
-  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.25);
-  margin-left: auto;
-  margin-right: auto;
-  padding: 2em;
-  margin-top: 5vh;
-  width: 50%;
-  display: flex;
-  flex-direction: column;
-}
+  > div {
+    background-color: #ffffff;
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.25);
+    margin-left: auto;
+    margin-right: auto;
+    padding: 2em;
+    margin-top: calc(50vh - 220px);
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+  }
 
-#modal h1 {
-  color: #333333;
-  font-size: 2em;
-}
+  h1 {
+    color: #333333;
+    font-size: 2em;
+    margin: 0 0 .5em;
+  }
 
-#modal h2 {
-  margin-top: 1.5em;
-}
+  h2 {
+    margin: 1em 0 .5em;
+    color: initial;
+  }
 
-#modal-header {
-  display: flex;
-  justify-content: space-between;
-}
+  header {
+    display: flex;
+    justify-content: space-between;
+  }
 
-#modal-footer {
-  display: flex;
-  font-size: 2em;
-  justify-content: flex-start;
-}
-
-#modal-footer a {
-  margin-right: 0.25em;
+  footer {
+    padding-top: 1em;
+    border-top: 1px solid #aaa;
+    a {
+      margin-right: 1.5em;
+      color: initial;
+    }
+  }
 }
 
 .modal-close {

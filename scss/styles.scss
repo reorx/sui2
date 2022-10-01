@@ -1,3 +1,8 @@
+:root {
+	--edge-gap: 8px;
+	--color-link-hover-bg: rgba(205, 205, 205, 0.5);
+}
+
 html {
   box-sizing: border-box;
 }
@@ -74,45 +79,6 @@ a:hover {
   text-decoration-skip: true;
 }
 
-.icon {
-  font-size: 2.5em;
-}
-
-/* TABLES */
-
-table {
-  border: thin solid #e4e4e4;
-  border-collapse: collapse;
-  border-spacing: 0;
-  font-size: 1em;
-  text-align: left;
-  width: 100%;
-
-  td:nth-of-type(2) {
-    padding-right: 5em;
-  }
-
-  td {
-    border: thin solid #e4e4e4;
-    color: #333333;
-    font-size: 1em;
-    overflow: hidden;
-    padding: 10px 5px;
-    word-break: normal;
-  }
-
-  th {
-    border: thin solid #e4e4e4;
-    color: #333333;
-    font-weight: bold;
-    padding: 10px 5px;
-  }
-
-  a {
-    color: #333333;
-  }
-}
-
 /* LAYOUT */
 
 #container {
@@ -144,46 +110,59 @@ table {
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-template-rows: 64px;
   padding-bottom: var(--module-spacing);
+
 }
 
-.apps_icon {
-  height: 64px;
-  margin-right: 1em;
-  padding-top: 15px;
-}
-
-.apps_icon span {
-  font-size: 2.5em;
-  line-height: 3rem;
-}
 
 .apps_item {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  height: 64px;
   margin: 0;
+
+	> a {
+		display: flex;
+		padding: var(--edge-gap);
+  	height: 55px;
+
+		&:hover, &:active {
+			background-color: var(--color-link-hover-bg);
+			text-decoration: none;
+		}
+		&:hover .name {
+			text-decoration: underline;
+		}
+	}
+
+
+	.apps_icon {
+		margin-right: 1em;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		svg {
+			width: 32px;
+			height: 32px;
+		}
+	}
+
+	.apps_text {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		flex: 1;
+		overflow: hidden;
+		line-height: 1.3em;
+		color: var(--color-text-acc);
+		font-weight: 500;
+
+		.domain {
+			font-size: .8em;
+			font-weight: 400;
+		}
+	}
 }
 
-.apps_text {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  flex: 1;
-  overflow: hidden;
-}
-
-.apps_text a {
-  font-size: 1em;
-  font-weight: 500;
-  text-transform: uppercase;
-}
-
-.apps_text span {
-  color: var(--color-text-acc);
-  font-size: 0.8em;
-  text-transform: uppercase;
-}
 
 #links_loop {
   display: grid;

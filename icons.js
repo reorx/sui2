@@ -15,7 +15,7 @@ export const getIconSVG = function(name) {
   const icon = getIconData(iconsData, name)
   if (!icon) return
   const renderData = iconToSVG(icon, {
-    height: '35',
+    height: 'auto',
   });
 
   const svgAttributes = {

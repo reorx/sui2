@@ -57,14 +57,17 @@
       <h3>{{name}}</h3>
       <div class="apps_loop">
         {{#items}}
+
         <div class="apps_item">
-          <div class="apps_icon">
-          {{{iconify icon}}}
-          </div>
-          <div class="apps_text">
-            <a href="{{url}}" target="_blank">{{name}}</a>
-            <span id="app-address">{{domain url}}</span>
-          </div>
+          <a href="{{url}}" target="_blank">
+            <div class="apps_icon">
+            {{{iconify icon}}}
+            </div>
+            <div class="apps_text">
+              <span class="name">{{name}}</span>
+              <span class="domain">{{domain url}}</span>
+            </div>
+          </a>
         </div>
         {{/items}}
       </div>

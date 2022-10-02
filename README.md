@@ -7,7 +7,9 @@ new features like keyboard navigation to boost your productivity.
 It's a complete refactor, brings new technologies for easier development & deployment.
 
 See how keyboard navigation works in action:
-https://user-images.githubusercontent.com/405972/193420471-7454270e-7bcc-43cc-a61d-e8b65e6b09f3.mov
+
+<video src="https://user-images.githubusercontent.com/405972/193420471-7454270e-7bcc-43cc-a61d-e8b65e6b09f3.mov"></video>
+
 
 ## Deploy to any static hosting
 

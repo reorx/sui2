@@ -38,6 +38,8 @@ jobs:
 
       - run: npm i
       - run: npm run build
+        env:
+          WEBMANIFEST_SCOPE: /sui2/
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3

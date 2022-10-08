@@ -19,6 +19,26 @@ try {
   }
 }
 
+const manifest = {
+  "name": process.env.WEBMANIFEST_NAME || "SUI2",
+  "short_name": process.env.WEBMANIFEST_SHORT_NAME || "sui2",
+  "description": process.env.WEBMANIFEST_DESCRIPTION || "A startpage",
+  "icons": [
+    {
+      "src": "icon-512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "scope": "/",
+  "start_url": "/",
+  "display": "standalone"
+}
+
+if (process.env.WEBMANIFEST_SCOPE) {
+  manifest.scope = process.env.WEBMANIFEST_SCOPE
+  manifest.start_url = process.env.WEBMANIFEST_SCOPE
+}
 
 export default defineConfig({
   // use relative path for assets
@@ -39,20 +59,7 @@ export default defineConfig({
       workbox: {
         globPatterns: ['**/*.{js,css,html,ico,png,svg}']
       },
-      manifest: {
-        "name": "SUI2",
-        "short_name": "sui2",
-        "description": "A startpage",
-        "icons": [
-          {
-            "src": "icon-512.png",
-            "type": "image/png",
-            "sizes": "512x512"
-          }
-        ],
-        "start_url": "/",
-        "display": "standalone"
-      }
+      manifest,
     }),
     handlebars({
       context: data,

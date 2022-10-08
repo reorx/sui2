@@ -3,7 +3,6 @@
     {
       "name": "Cloud",
       "items": [
-        {"name":"CloudCMD","url":"http://files.example.com","icon":"folder-multiple-outline"},
         {"name":"Cockpit","url":"http://cp.example.com","icon":"airplane"},
         {"name":"Feedbin","url":"http://rss.example.com","icon":"rss"},
         {"name":"Filestash","url":"http://cloud.example.com","icon":"package"},

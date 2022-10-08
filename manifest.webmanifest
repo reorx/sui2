@@ -1,1 +1,1 @@
-{"name":"SUI2","short_name":"sui2","start_url":"/","display":"standalone","background_color":"#ffffff","lang":"en","scope":"./","description":"A startpage","icons":[{"src":"icon-512.png","type":"image/png","sizes":"512x512"}]}
+{"name":"SUI2","short_name":"sui2","start_url":"/sui2/","display":"standalone","background_color":"#ffffff","lang":"en","scope":"/sui2/","description":"A startpage","icons":[{"src":"icon-512.png","type":"image/png","sizes":"512x512"}]}

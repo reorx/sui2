@@ -2,6 +2,7 @@ import { defineConfig } from 'vite'
 import { resolve } from 'path'
 import { readFileSync } from 'fs'
 import handlebars from 'vite-plugin-handlebars'
+import { VitePWA } from 'vite-plugin-pwa'
 import { getIconSVG } from './icons'
 
 let dataFilename = process.env.DATA_FILENAME || './data.json'
@@ -32,6 +33,27 @@ export default defineConfig({
     },
   },
   plugins: [
+    VitePWA({
+      injectRegister: 'auto',
+      registerType: 'prompt',
+      workbox: {
+        globPatterns: ['**/*.{js,css,html,ico,png,svg}']
+      },
+      manifest: {
+        "name": "SUI2",
+        "short_name": "sui2",
+        "description": "A startpage",
+        "icons": [
+          {
+            "src": "icon-512.png",
+            "type": "image/png",
+            "sizes": "512x512"
+          }
+        ],
+        "start_url": "/",
+        "display": "standalone"
+      }
+    }),
     handlebars({
       context: data,
       helpers: {

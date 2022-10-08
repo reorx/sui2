@@ -73,6 +73,10 @@ function updateKeyword(key) {
 
 function handleKeyPress(e) {
   var key = e.keyCode || e.which;
+  if (e.ctrlKey || e.metaKey) {
+    // ignore key combination
+    return
+  }
   if (key == 9 || key == 13) { // Tab to switch and Enter to open
       // e.preventDefault();
       // e.stopPropagation();

@@ -22,7 +22,7 @@ try {
 const manifest = {
   "name": process.env.WEBMANIFEST_NAME || "SUI2",
   "short_name": process.env.WEBMANIFEST_SHORT_NAME || "sui2",
-  "description": process.env.WEBMANIFEST_DESCRIPTION || "A startpage",
+  "description": process.env.WEBMANIFEST_DESCRIPTION || "a startpage for your server and / or new tab page",
   "icons": [
     {
       "src": "icon-512.png",

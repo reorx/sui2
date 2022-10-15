@@ -5,13 +5,21 @@ import handlebars from 'vite-plugin-handlebars'
 import { VitePWA } from 'vite-plugin-pwa'
 import { getIconSVG } from './icons'
 
-let dataFilename = process.env.DATA_FILENAME || './data.json'
+// envs
+const DATA_FILENAME = process.env.DATA_FILENAME,
+  WEBMANIFEST_NAME = process.env.WEBMANIFEST_NAME,
+  WEBMANIFEST_DESCRIPTION = process.env.WEBMANIFEST_DESCRIPTION,
+  WEBMANIFEST_SHORT_NAME = process.env.WEBMANIFEST_SHORT_NAME,
+  WEBMANIFEST_SCOPE = process.env.WEBMANIFEST_SCOPE,
+  NO_PWA = process.env.NO_PWA;
+
+let dataFilename = DATA_FILENAME || './data.json'
 
 var data
 try {
   data = JSON.parse(readFileSync(dataFilename))
 } catch (e) {
-  if (e.code === 'ENOENT' && !process.env.DATA_FILENAME) {
+  if (e.code === 'ENOENT' && !DATA_FILENAME) {
     console.log('data.json missing, fall back to data.example.json')
     data = await import('./data.example.json')
   } else {
@@ -20,9 +28,9 @@ try {
 }
 
 const manifest = {
-  "name": process.env.WEBMANIFEST_NAME || "SUI2",
-  "short_name": process.env.WEBMANIFEST_SHORT_NAME || "sui2",
-  "description": process.env.WEBMANIFEST_DESCRIPTION || "a startpage for your server and / or new tab page",
+  "name": WEBMANIFEST_NAME || "SUI2",
+  "short_name": WEBMANIFEST_SHORT_NAME || "sui2",
+  "description": WEBMANIFEST_DESCRIPTION || "a startpage for your server and / or new tab page",
   "icons": [
     {
       "src": "icon-512.png",
@@ -35,9 +43,9 @@ const manifest = {
   "display": "standalone"
 }
 
-if (process.env.WEBMANIFEST_SCOPE) {
-  manifest.scope = process.env.WEBMANIFEST_SCOPE
-  manifest.start_url = process.env.WEBMANIFEST_SCOPE
+if (WEBMANIFEST_SCOPE) {
+  manifest.scope = WEBMANIFEST_SCOPE
+  manifest.start_url = WEBMANIFEST_SCOPE
 }
 
 export default defineConfig({
@@ -53,7 +61,8 @@ export default defineConfig({
     },
   },
   plugins: [
-    VitePWA({
+    NO_PWA ? null
+    : VitePWA({
       injectRegister: 'auto',
       registerType: 'prompt',
       // https://developer.chrome.com/docs/workbox/modules/workbox-build/#generatesw-mode
@@ -81,5 +90,5 @@ export default defineConfig({
         }
       }
     }),
-  ],
+  ].filter(x => x !== null),
 })

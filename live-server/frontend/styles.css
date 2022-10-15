@@ -16,10 +16,8 @@ html, body {
 .main .right {
   flex: 1;
   height: 100%;
-  background-color: #ccc;
 }
 .main .left {
-  background-color: #ccc;
   display: flex;
   flex-direction: column;
 }
@@ -41,6 +39,7 @@ html, body {
 .editor {
   flex-grow: 1;
   position: relative;
+  border-top: 1px solid #aaa;
 }
 
 /* right */

@@ -1,0 +1,11 @@
+{
+  "name": "sui2-live-server",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "node app.js"
+  },
+  "dependencies": {
+    "express": "^4.18.1"
+  }
+}

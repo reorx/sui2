@@ -1,0 +1,51 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.main {
+  position: absolute;
+  left: 0; right: 0;
+  top: 0; bottom: 0;
+  display: flex;
+}
+.main .left,
+.main .right {
+  flex: 1;
+  height: 100%;
+  background-color: #ccc;
+}
+.main .left {
+  background-color: #ccc;
+  display: flex;
+  flex-direction: column;
+}
+.main .right {
+  background-color: #eee;
+}
+
+/* left */
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 15px;
+}
+.header button {
+  height: 40px;
+  align-self: center;
+}
+.editor {
+  flex-grow: 1;
+  position: relative;
+}
+
+/* right */
+
+.main .right > iframe {
+  width: 100%;
+  height: 100%;
+}

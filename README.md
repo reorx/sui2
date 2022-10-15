@@ -28,3 +28,29 @@ To build the project, simply follow the steps below.
 
    There are various hosting services like GitHub Pages, Cloudflare Pages, Netlify.
    Examples will be documented later on.
+
+## Deploy using Docker
+
+sui2 provides a Docker image that runs a NodeJS server,
+which not only servers the startpage directly,
+but also gives you an interface to edit and build the startpage lively.
+
+![](images/live-server.png)
+
+The image is hosted on Docker hub at: [reorx/sui2](https://hub.docker.com/r/reorx/sui2)
+
+Run the following command to get started:
+
+```
+docker run --rm -t -p 3000:3000 -v data:/data reorx/sui2
+```
+
+Command explained:
+
+- `-p 3000:3000`: the server runs on port 3000, you need to specify the port on host to expose, if you want to access it from 5000, you can change the argument to `-p 5000:3000`
+- `-v data:/data`: you need to attach a volume to `/data`, which stores the config and static resources of startpage
+
+
+After the container is alive, open `http://HOST:3000` to see the initial startpage.
+
+For the live editor, open `http//HOST:3000/editor`, there's no link for it on the startpage.

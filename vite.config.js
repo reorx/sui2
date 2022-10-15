@@ -6,20 +6,21 @@ import { VitePWA } from 'vite-plugin-pwa'
 import { getIconSVG } from './icons'
 
 // envs
-const DATA_FILENAME = process.env.DATA_FILENAME,
+const DATA_FILE = process.env.DATA_FILE,
   WEBMANIFEST_NAME = process.env.WEBMANIFEST_NAME,
   WEBMANIFEST_DESCRIPTION = process.env.WEBMANIFEST_DESCRIPTION,
   WEBMANIFEST_SHORT_NAME = process.env.WEBMANIFEST_SHORT_NAME,
   WEBMANIFEST_SCOPE = process.env.WEBMANIFEST_SCOPE,
   NO_PWA = process.env.NO_PWA;
 
-let dataFilename = DATA_FILENAME || './data.json'
+let dataFile = DATA_FILE || './data.json'
+console.log('use DATA_FILE: ', dataFile)
 
 var data
 try {
-  data = JSON.parse(readFileSync(dataFilename))
+  data = JSON.parse(readFileSync(dataFile))
 } catch (e) {
-  if (e.code === 'ENOENT' && !DATA_FILENAME) {
+  if (e.code === 'ENOENT' && !DATA_FILE) {
     console.log('data.json missing, fall back to data.example.json')
     data = await import('./data.example.json')
   } else {

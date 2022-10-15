@@ -34,3 +34,26 @@ fetch('/api/getData')
   .then(body => {
     editor.setValue(body)
   })
+
+document.querySelector('.fn-build').addEventListener('click', async (e) => {
+  e.preventDefault()
+
+  const res = await fetch('/api/updateDataFile', {
+    method: 'POST',
+    body: editor.getValue(),
+  })
+  const data = await res.json()
+  if (!data.ok) {
+    alert('failed to update data file')
+    return
+  }
+  console.log('update data file success')
+
+  const res1 = await fetch('/api/build', {
+    method: 'POST',
+  })
+  const text = await res1.text()
+  console.log(text)
+
+  document.querySelector('#preview').contentWindow.location.reload(true);
+})

@@ -44,14 +44,14 @@ app.post('/api/updateDataFile', (req, res) => {
 
   // save to data dir
   fs.writeFileSync(dataFilePath, rawBody)
-  res.send('ok')
+  res.send(JSON.stringify({ok: 1}))
 })
 
 app.post('/api/build', (req, res) => {
   const cmd = 'npm run build'
   const newEnv = {
     ...process.env,
-    DATA_FILENAME: dataFilePath,
+    DATA_FILE: dataFilePath,
     NO_PWA: 1,
   }
   exec(cmd, {

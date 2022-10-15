@@ -23,6 +23,15 @@ if (!path.isAbsolute(dataDir)) {
 dataFilePath = path.resolve(dataDir, 'data.json')
 console.log('dataFilePath', dataFilePath)
 
+// start up check
+
+if (!fs.existsSync(dataFilePath)) {
+  console.log('copy example file to DATA_DIR')
+  fs.copyFileSync(path.resolve(buildDir, 'data.example.json'), dataFilePath)
+}
+
+// server code
+
 app.use(bodyParser.text({type: 'text/plain'}))
 
 app.get('/api/getData', (req, res) => {

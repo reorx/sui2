@@ -3,7 +3,8 @@
   "private": true,
   "version": "1.0.0",
   "scripts": {
-    "dev": "nodemon --watch app.js app.js",
+    "dev-backend": "nodemon --watch app.js app.js",
+    "dev": "vite --host",
     "build": "rm -rf frontend/dist && vite build"
   },
   "dependencies": {

@@ -29,7 +29,7 @@ const editor = monaco.editor.create(
     wordWrap: 'on',
   })
 
-fetch('/getData')
+fetch('/api/getData')
   .then(res => res.text())
   .then(body => {
     editor.setValue(body)

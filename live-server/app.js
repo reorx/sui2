@@ -25,13 +25,13 @@ console.log('dataFilePath', dataFilePath)
 
 app.use(bodyParser.text({type: 'text/plain'}))
 
-app.get('/getData', (req, res) => {
+app.get('/api/getData', (req, res) => {
   const data = fs.readFileSync(dataFilePath)
   res.setHeader('Content-Type', 'application/json')
   res.send(data)
 })
 
-app.post('/updateDataFile', (req, res) => {
+app.post('/api/updateDataFile', (req, res) => {
   rawBody = req.body
   try {
     JSON.parse(rawBody)
@@ -47,7 +47,7 @@ app.post('/updateDataFile', (req, res) => {
   res.send('ok')
 })
 
-app.post('/build', (req, res) => {
+app.post('/api/build', (req, res) => {
   const cmd = 'npm run build'
   const newEnv = {
     ...process.env,

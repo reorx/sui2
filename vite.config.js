@@ -64,7 +64,7 @@ export default defineConfig({
     NO_PWA ? null
     : VitePWA({
       injectRegister: 'auto',
-      registerType: 'prompt',
+      registerType: 'autoUpdate',
       // https://developer.chrome.com/docs/workbox/modules/workbox-build/#generatesw-mode
       workbox: {
         globPatterns: ['**/*.{js,css,html,ico,png,svg}'],

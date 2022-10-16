@@ -22,7 +22,7 @@ html, body {
   flex-direction: column;
 }
 .main .right {
-  background-color: #eee;
+  border-left: 5px solid #ddd;
 }
 
 /* left */

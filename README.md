@@ -35,7 +35,7 @@ sui2 provides a Docker image that runs a NodeJS server,
 which not only servers the startpage directly,
 but also gives you an interface to edit and build the startpage lively.
 
-![](images/live-server.png)
+![SUI2 Live Editor](images/live-editor.png)
 
 The image is hosted on Docker hub at: [reorx/sui2](https://hub.docker.com/r/reorx/sui2)
 
@@ -51,6 +51,6 @@ Command explained:
 - `-v data:/data`: you need to attach a volume to `/data`, which stores the config and static resources of startpage
 
 
-After the container is alive, open `http://HOST:3000` to see the initial startpage.
+After the container is alive, open `http://DOCKER_HOST:3000/` to see the initial startpage.
 
-For the live editor, open `http//HOST:3000/editor`, there's no link for it on the startpage.
+For the live editor, open `http//DOCKER_HOST:3000/editor/`, there's no link for it on the startpage.

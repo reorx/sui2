@@ -5,8 +5,8 @@
   "scripts": {
     "dev-backend": "nodemon --watch app.js app.js",
     "dev": "vite --host",
-    "clean": "rm -rf data editor/dist",
-    "build": "npm run clean && vite build"
+    "build": "rm -rf editor/dist && vite build",
+    "clean": "rm -rf data editor/dist"
   },
   "dependencies": {
     "express": "^4.18.1",

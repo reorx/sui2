@@ -29,6 +29,8 @@ To build the project, simply follow the steps below.
    There are various hosting services like GitHub Pages, Cloudflare Pages, Netlify.
    Examples will be documented later on.
 
+If you are happy with the look and functionality of sui2, it is recommended to use this project as a submodule rather than fork it. Please checkout [reorx/start](https://github.com/reorx/start) as an example for how to use it in another project, and how to build with GitHub Actions and deploy to Cloudflare Pages.
+
 ## Deploy using Docker
 
 > Notice: to make the preview page in live editor work more predictable, Docker image does not provide PWA support
@@ -43,7 +45,7 @@ The image is hosted on Docker hub at: [reorx/sui2](https://hub.docker.com/r/reor
 
 Run the following command to get started:
 
-```
+```bash
 docker run --rm -t -p 3000:3000 -v data:/data reorx/sui2
 ```
 
@@ -55,6 +57,8 @@ Command explained:
 After the container is alive, open `http://DOCKER_HOST:3000/` to see the initial startpage.
 
 For the live editor, open `http//DOCKER_HOST:3000/editor/`, there's no link for it on the startpage.
+
+Checkout the configuration file [fly.toml](https://github.com/reorx/sui2/blob/master/fly.toml) as an example for how to deploy the Docker image to fly.io
 
 ## `data.json` editing
 

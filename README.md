@@ -106,7 +106,7 @@ the express server on port 3000. The default data folder is at `live-server/data
 
 Some other features I plan to work in the future, PRs are welcome.
 
-- [ ] Enhance UI and error handling for live-server
+- [ ] Custom theme editor
 - [ ] Support dynamically render the page from `data.json`. This makes it possible to host a sui2 distribution that is changable without the building tools.
 - [ ] A chrome extension that shows sui2 in a popup.
 - [ ] Add new tab support for the chrome extension.

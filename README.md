@@ -3,7 +3,7 @@
 *a startpage for your server and / or new tab page*
 
 Forked from [sui](https://github.com/jeroenpardon/sui), sui2 adds
-new features like keyboard navigation to boost your productivity.
+new features like keyboard navigation and PWA to boost your productivity.
 It's a complete refactor, brings new technologies for easier development & deployment.
 
 See how keyboard navigation works in action:
@@ -18,7 +18,7 @@ sui2 uses Vite to build a staic website, which means it's nothing but vanilla HT
 To build the project, simply follow the steps below.
 
 1. Install dependencies: `npm i`
-2. Create you own `data.json`.
+2. Create you own `data.json`
 
    sui2 get all the data it requires from `data.json`, you can make a copy from `data.example.json`, and then edit it with your own applications and bookmarks.
 3. Build the result: `npm run build`
@@ -30,6 +30,8 @@ To build the project, simply follow the steps below.
    Examples will be documented later on.
 
 ## Deploy using Docker
+
+> Notice: to make the preview page in live editor work more predictable, Docker image does not provide PWA support
 
 sui2 provides a Docker image that runs a NodeJS server,
 which not only servers the startpage directly,
@@ -48,9 +50,24 @@ docker run --rm -t -p 3000:3000 -v data:/data reorx/sui2
 Command explained:
 
 - `-p 3000:3000`: the server runs on port 3000, you need to specify the port on host to expose, if you want to access it from 5000, you can change the argument to `-p 5000:3000`
-- `-v data:/data`: you need to attach a volume to `/data`, which stores the config and static resources of startpage
-
+- `-v data:/data`: you need to attach a volume to `/data`, which stores the config and static resources of the startpage
 
 After the container is alive, open `http://DOCKER_HOST:3000/` to see the initial startpage.
 
 For the live editor, open `http//DOCKER_HOST:3000/editor/`, there's no link for it on the startpage.
+
+## TODO
+
+some other features I plan to work in the future, PRs are welcome.
+
+- [ ] Support dynamically render the page from `data.json`. This makes it possible to host a sui2 distribution that is changable without the building tools.
+- [ ] A chrome extension that shows sui2 in a popup.
+- [ ] Add new tab support for the chrome extension.
+
+## Donation
+
+If you think this project is enjoyable to use, or saves some time,
+consider giving me a cup of coffee :)
+
+- [GitHub Sponsors - reorx](https://github.com/sponsors/reorx/)
+- [Ko-Fi - reorx](https://ko-fi.com/reorx)

@@ -35,17 +35,14 @@ fetch('/api/getData')
     editor.setValue(body)
   })
 
-document.querySelector('.fn-build').addEventListener('click', async (e) => {
-  e.preventDefault()
-
+const runBuild = async () => {
   const res = await fetch('/api/updateDataFile', {
     method: 'POST',
     body: editor.getValue(),
   })
   const data = await res.json()
   if (!data.ok) {
-    alert('failed to update data file')
-    return
+    throw 'failed to update data file'
   }
   console.log('update data file success')
 
@@ -54,6 +51,24 @@ document.querySelector('.fn-build').addEventListener('click', async (e) => {
   })
   const text = await res1.text()
   console.log(text)
+}
 
+const buildBtn = document.querySelector('.fn-build')
+buildBtn.addEventListener('click', async (e) => {
+  e.preventDefault()
+  e.target.disabled = true
+
+  const enableTarget = () => {
+    e.target.disabled = false
+  }
+
+  try {
+    await runBuild()
+  } catch(e) {
+    alert(e)
+    enableTarget()
+  }
+
+  enableTarget()
   document.querySelector('#preview').contentWindow.location.reload(true);
 })

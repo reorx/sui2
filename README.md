@@ -68,10 +68,45 @@ it's self explanatory so I'm not going to write too much about it, maybe a json 
 The only thing worth mentioning here is the `icon` attribute,
 it uses the [MDI icon set from Iconify](https://icon-sets.iconify.design/mdi/), you can find any icon you like in this page, and use the name after `mdi:` as the value for the `icon` attribute. For example `mdi:bread-slice` should be used as `"icon": "bread-slice"` in `data.json`.
 
+## Development
+
+Developing the startpage is easy, first clone the project, then run the following:
+
+```bash
+npm install
+
+# start vite dev server
+npm run dev
+```
+
+Developing the live-server is a little bit tricky, `live-server/` is an independent package with an express server and another vite frontend.
+
+```bash
+cd live-server
+npm install
+
+# start the express server on port 3000
+npm run dev-backend
+
+# open another shell, then start vite dev server
+npm run dev
+```
+
+The output of `npm run dev` looks like this:
+
+```
+  ➜  Local:   http://localhost:5173/editor/
+```
+
+You can now open this URL to start developing live-server.
+The fetch requests of `/api` and `/preview` on this page will be proxied to
+the express server on port 3000. The default data folder is at `live-server/data/`.
+
 ## TODO
 
-some other features I plan to work in the future, PRs are welcome.
+Some other features I plan to work in the future, PRs are welcome.
 
+- [ ] Enhance UI and error handling for live-server
 - [ ] Support dynamically render the page from `data.json`. This makes it possible to host a sui2 distribution that is changable without the building tools.
 - [ ] A chrome extension that shows sui2 in a popup.
 - [ ] Add new tab support for the chrome extension.

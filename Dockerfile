@@ -1,4 +1,15 @@
-FROM node:16-buster
+FROM node:16-buster-slim
+
+# install dev dependencies for sui2/live-server
+WORKDIR /live-server
+ADD live-server/package.json ./
+RUN npm i --dev
+
+# build sui2/live-server frontend
+ADD live-server ./
+RUN npm run build
+
+FROM node:16-buster-slim
 
 ENV TINI_VERSION v0.19.0
 ADD https://github.com/krallin/tini/releases/download/${TINI_VERSION}/tini /tini
@@ -10,18 +21,16 @@ WORKDIR /app
 ADD package.json ./
 RUN npm i
 
-# install dependencies for sui2/live-server
+# install prod dependencies for sui2/live-server
 WORKDIR /app/live-server
 ADD live-server/package.json ./
-RUN npm i
+RUN npm i --omit=dev
 
 # add all files
-WORKDIR /app
-ADD . .
+ADD . /app
 
-# build sui2/live-server frontend
-WORKDIR /app/live-server
-RUN npm run build
+# copy editor dist from the last image
+COPY --from=0 /live-server/editor/dist ./editor/dist
 
 ENV DATA_DIR /data
 CMD ["node", "app.js"]

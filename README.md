@@ -59,7 +59,7 @@ For the live editor, open `http//DOCKER_HOST:3000/editor/`, there's no link for 
 ## `data.json` editing
 
 There's a full example in [data.example.json](https://github.com/reorx/sui2/blob/master/data.example.json),
-it's pretty easy to understand so I not going to write too much about it, maybe a json schema will be created as a supplement in the future.
+it's self explanatory so I'm not going to write too much about it, maybe a json schema will be created as a supplement in the future.
 
 The only thing worth mentioning here is the `icon` attribute,
 it uses the [MDI icon set from Iconify](https://icon-sets.iconify.design/mdi/), you can find any icon you like in this page, and use the name after `mdi:` as the value for the `icon` attribute. For example `mdi:bread-slice` should be used as `"icon": "bread-slice"` in `data.json`.

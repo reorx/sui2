@@ -2,7 +2,7 @@
 
 *a startpage for your server and / or new tab page*
 
-Forked from [sui](https://github.com/jeroenpardon/sui), sui2 adds
+Originally forked from [sui](https://github.com/jeroenpardon/sui), sui2 adds
 new features like keyboard navigation and PWA to boost your productivity.
 It's a complete refactor, brings new technologies for easier development & deployment.
 

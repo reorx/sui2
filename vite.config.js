@@ -7,6 +7,7 @@ import { getIconSVG } from './icons'
 
 // envs
 const DATA_FILE = process.env.DATA_FILE,
+  OUT_DIR = process.env.OUT_DIR,
   WEBMANIFEST_NAME = process.env.WEBMANIFEST_NAME,
   WEBMANIFEST_DESCRIPTION = process.env.WEBMANIFEST_DESCRIPTION,
   WEBMANIFEST_SHORT_NAME = process.env.WEBMANIFEST_SHORT_NAME,
@@ -55,6 +56,7 @@ export default defineConfig({
   build: {
     // put assets in the same folder as index.html
     assetsDir: ".",
+    outDir: OUT_DIR || 'dist',
     rollupOptions: {
       input: {
         main: resolve(__dirname, 'index.html'),

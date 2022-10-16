@@ -3,9 +3,8 @@ import { resolve } from 'path'
 
 
 export default defineConfig({
-  root: "frontend",
-  // use relative path for assets
-  base: "",
+  root: "editor",
+  base: "/editor/",
   build: {
     rolupOptions: {
       input: {
@@ -20,7 +19,7 @@ export default defineConfig({
       },
       '/preview': {
         target: 'http://localhost:3000',
-      }
+      },
     }
   }
 })

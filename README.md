@@ -60,6 +60,19 @@ For the live editor, open `http//DOCKER_HOST:3000/editor/`, there's no link for 
 
 Checkout the configuration file [fly.toml](https://github.com/reorx/sui2/blob/master/fly.toml) as an example for how to deploy the Docker image to fly.io
 
+### Build Docker Image
+
+Currently, the image has only amd64 and arm64 variants, if your architecture is not one of these,
+please build the image by yourself, simply by running:
+
+```
+docker buildx build -t sui2 .
+```
+
+Notice that BuildKit (buildx) must be used to get the `TARGETARCH` argument,
+see [Automatic platform ARGs in the global scope](https://docs.docker.com/engine/reference/builder/#automatic-platform-args-in-the-global-scope)
+
+
 ## `data.json` editing
 
 There's a full example in [data.example.json](https://github.com/reorx/sui2/blob/master/data.example.json),

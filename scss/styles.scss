@@ -19,7 +19,7 @@ body {
   margin: 0;
   padding: 0;
   -webkit-font-smoothing: antialiased;
-  width: 100vw;
+  width: 100%;
 }
 
 *,
@@ -234,7 +234,7 @@ a:hover {
 
   .apps_loop {
     grid-template-columns: 1fr 1fr 1fr;
-    width: 100vw;
+    width: 100%;
   }
 
   #links_loop {
@@ -258,7 +258,7 @@ a:hover {
     grid-column-gap: 0px;
     grid-row-gap: 0px;
     grid-template-columns: 1fr 1fr;
-    width: 100vw;
+    width: 100%;
   }
 
   #links_loop {

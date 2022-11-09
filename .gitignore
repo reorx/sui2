@@ -1,3 +1,7 @@
 package-lock.json
+pnpm-lock.yaml
 dist/
 data.json
+node_modules
+.idea
+.vscode

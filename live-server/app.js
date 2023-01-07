@@ -117,6 +117,10 @@ app.use('/preview', express.static(outDir))
 
 app.use('/editor', express.static(editorDir))
 
+app.use('*', function(req, res){
+  res.status(404).sendFile(path.resolve(outDir, '404.html'))
+})
+
 app.listen(port, () => {
   console.log(`live-server app listening on port ${port}`)
 })

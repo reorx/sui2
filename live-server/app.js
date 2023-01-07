@@ -54,7 +54,8 @@ if (!fs.existsSync(dataFilePath)) {
   fs.copyFileSync(path.resolve(buildDir, 'data.example.json'), dataFilePath)
 }
 
-if (!fs.existsSync(path.resolve(outDir, 'index.html'))) {
+if (!fs.existsSync(path.resolve(outDir, 'index.html')) &&
+    !fs.existsSync(path.resolve(outDir, '404.html'))) {
   console.log('run initial build')
   buildStartpage((err, stdout, stderr) => {
     if (err) {

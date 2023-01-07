@@ -60,6 +60,7 @@ export default defineConfig({
     rollupOptions: {
       input: {
         main: resolve(__dirname, 'index.html'),
+        page404: resolve(__dirname, '404.html'),
       },
     },
   },

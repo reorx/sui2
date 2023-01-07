@@ -1,4 +1,6 @@
 {
+  "title": "SUI2",
+  "description": "a startpage for your server and / or new tab page",
   "apps" : [
     {
       "name": "Cloud",
